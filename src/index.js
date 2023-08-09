@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import './index.css';
+// eslint-disable-next-line no-unused-vars
 const pizzaData = [
     {
         name: "Focaccia",
@@ -55,7 +56,7 @@ function App() {
             <Footer />
         </div>
     );
-}
+};
 
 
 function Header() {
@@ -64,21 +65,35 @@ function Header() {
             <h1>Fast React Pizza Co.</h1>
         </header>
     );
-}
+};
 
 
 function Menu() {
     return (
         <main className="menu">
             <h2>Our Menu</h2>
-            <Pizza />
-            <Pizza />
-            <Pizza />
-            <Pizza />
-            <Pizza />
+            <ul className="pizzas">
+                {pizzaData.map((pizza) => (
+                    <Pizza pizzasObj= {pizza} key = {pizza.name} />
+                ))}
+            </ul>
         </main>
     );
-}
+};
+
+function Pizza(props) {
+    return (
+        <li className="pizza">
+            <img src={props.pizzasObj.photoName} alt="Pizza Spinaci" className="im" />
+            <div>
+                <h3>{props.pizzasObj.name}</h3>
+                <p>{props.pizzasObj.ingredients}</p>
+                <span>{props.pizzasObj.price}</span>
+            </div>
+        </li>
+    );
+};
+
 function Footer() {
     // const hour = new Date().toLocaleString();
     // const openHours = 12;
@@ -87,17 +102,8 @@ function Footer() {
     return (
         <footer className="footer">We're currently open</footer>
     );
-}
+};
 
-function Pizza() {
-    return (
-        <div>
-            <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci" />
-            <h3>Pizza Spinaci</h3>
-            <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-        </div>
-    );
-}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<React.StrictMode>
