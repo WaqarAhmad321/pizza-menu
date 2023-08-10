@@ -44,4 +44,4 @@ Start the server
 
 ## Authors
 
-- [@octokatherine](https://github.com/WaqarAhmad321)
+- [@WaqarAhmad321](https://github.com/WaqarAhmad321)
