@@ -21,7 +21,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  npm create create-react-app
+  npm create-react-app
 ```
 
 Start the server
